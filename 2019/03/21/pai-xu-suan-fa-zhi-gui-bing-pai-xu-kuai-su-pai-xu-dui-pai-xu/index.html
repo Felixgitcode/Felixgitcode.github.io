@@ -28,7 +28,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -119,7 +119,7 @@
         <div class="logo-name">Felix</div>
         <div class="logo-desc">
             
-            Never really desperate, only the lost of the soul.
+            ׷�����Īͣ����ƽ�߾����Ǵ�ɽ
             
         </div>
     </div>
@@ -185,7 +185,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Felixgitcode/Felixgitcode.github.io" class="waves-effect waves-light" target="_blank">
                 <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -241,7 +241,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+<a href="https://github.com/Felixgitcode/Felixgitcode.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewbox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
         <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
@@ -396,14 +396,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        4 分
                     </div>
                     
                 
@@ -419,22 +419,99 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1 归并排序"></a>1 归并排序</h2><p>分而治之(divide - conquer);每个递归过程涉及三个步骤<br>    第一, 分解: 把待排序的 n 个元素的序列分解成两个子序列, 每个子序列包括 n/2 个元素.<br>    第二, 治理: 对每个子序列分别调用归并排序MergeSort, 进行递归操作<br>    第三, 合并: 合并两个排好序的子序列,生成排序结果.<br>    时间复杂度：O(nlogn)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> mergeSort(int[] arr)&#123;</span><br><span class="line">	<span class="keyword">if</span>(arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	mergeSort(arr,<span class="number">0</span>,arr.length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> mergeSort(int[] arr,int L,int R)&#123;</span><br><span class="line">	<span class="keyword">if</span>(L == R)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	int mid = L + (R-L)/<span class="number">2</span>;</span><br><span class="line">	mergeSort(arr,L,mid);</span><br><span class="line">	mergeSort(arr,mid+<span class="number">1</span>,R)</span><br><span class="line">	merge(arr,L,mid,R);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> merge(int[] arr,int L,int mid,int R)&#123;</span><br><span class="line">	int[] help = <span class="keyword">new</span> int[R - L + <span class="number">1</span>];<span class="comment">//辅助数组</span></span><br><span class="line">	int p1 = L;</span><br><span class="line">	int p2 = mid + <span class="number">1</span>;</span><br><span class="line">	int i = <span class="number">0</span>;</span><br><span class="line">	 <span class="comment">// 把较小的数先移到新数组中</span></span><br><span class="line">	<span class="keyword">while</span>(p1 &lt;= mid &amp;&amp; p2 &lt;= R)&#123;</span><br><span class="line">		help[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];</span><br><span class="line">	&#125;</span><br><span class="line">	 <span class="comment">// 把左边剩余的数移入数组 </span></span><br><span class="line">	<span class="keyword">while</span>(p1 &lt;= mid)&#123;</span><br><span class="line">		help[i++] = arr[p1++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 把右边剩余的数移入数组</span></span><br><span class="line">	<span class="keyword">while</span>(p2 &lt;= R)&#123;</span><br><span class="line">		help[i++] = arr[p2++];</span><br><span class="line">	&#125;</span><br><span class="line">	 <span class="comment">// 把新数组中的数覆盖nums数组</span></span><br><span class="line">	<span class="keyword">for</span>(int j=<span class="number">0</span>; j &lt; help.length; j++)&#123;</span><br><span class="line">		arr[L + j] = help[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <h2 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1 归并排序"></a>1 归并排序</h2><p>分而治之(divide - conquer);每个递归过程涉及三个步骤<br>    第一, 分解: 把待排序的 n 个元素的序列分解成两个子序列, 每个子序列包括 n/2 个元素.<br>    第二, 治理: 对每个子序列分别调用归并排序MergeSort, 进行递归操作<br>    第三, 合并: 合并两个排好序的子序列,生成排序结果.<br>    时间复杂度：O(nlogn)</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>arr <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> arr<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span>length<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span>int L<span class="token punctuation">,</span>int R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>L <span class="token operator">==</span> R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    int mid <span class="token operator">=</span> L <span class="token operator">+</span> <span class="token punctuation">(</span>R<span class="token operator">-</span>L<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>L<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>R<span class="token punctuation">)</span>
+    <span class="token function">merge</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>L<span class="token punctuation">,</span>mid<span class="token punctuation">,</span>R<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span>int L<span class="token punctuation">,</span>int mid<span class="token punctuation">,</span>int R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    int<span class="token punctuation">[</span><span class="token punctuation">]</span> help <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>R <span class="token operator">-</span> L <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//辅助数组</span>
+    int p1 <span class="token operator">=</span> L<span class="token punctuation">;</span>
+    int p2 <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token comment" spellcheck="true">// 把较小的数先移到新数组中</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">&lt;=</span> mid <span class="token operator">&amp;&amp;</span> p2 <span class="token operator">&lt;=</span> R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p1<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>p2<span class="token punctuation">]</span> <span class="token operator">?</span> arr<span class="token punctuation">[</span>p1<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> arr<span class="token punctuation">[</span>p2<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     <span class="token comment" spellcheck="true">// 把左边剩余的数移入数组 </span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">&lt;=</span> mid<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p1<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 把右边剩余的数移入数组</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">&lt;=</span> R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p2<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     <span class="token comment" spellcheck="true">// 把新数组中的数覆盖nums数组</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>int j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> help<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>L <span class="token operator">+</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> help<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="2快速排序"><a href="#2快速排序" class="headerlink" title="2快速排序"></a>2快速排序</h2><p>本文为经典快排的改进版–随机快排</p>
 <ul>
 <li>是一种比较快的排序，适合基本无序的数据<ul>
 <li>从数列中挑取最后一个元素（最后一个元素随机选出）做基准，重新排列，所有比基准小的放前面，比基准大的放后面</li>
 <li>分成两拨后，继续递归的使用上述方法，最终有序</li>
-<li>时间复杂度：O(nlogn)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> quickSort(int[] arr) &#123;</span><br><span class="line">	<span class="keyword">if</span> (arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	quickSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> quickSort(int[] arr,int L,int R)&#123;</span><br><span class="line">	<span class="keyword">if</span>(L &lt; R)&#123;</span><br><span class="line">		swap(arr, L + (int)(<span class="built_in">Math</span>.random()*(R - L + <span class="number">1</span>)), R);<span class="comment">//在数组中随机选取一个作为基准</span></span><br><span class="line">		int[] p = partition(arr, L, R);</span><br><span class="line">		quickSort(arr, L, p[<span class="number">0</span>] - <span class="number">1</span>);</span><br><span class="line">		quickSort(arr, p[<span class="number">1</span>] + <span class="number">1</span>, R);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">less指针为小于基准的区域，初始指向-1,</span></span><br><span class="line"><span class="comment">more指针为大于基准的区域，初始指向基准位置，</span></span><br><span class="line"><span class="comment">开始时让数组第一位即L与基准相比，小于则交换L与less前一位，L+1；</span></span><br><span class="line"><span class="comment">大于则交换L与more的后一位，L继续与基准比较；相等则L+1</span></span><br><span class="line"><span class="comment">由于基准没参与交换，所以每次遍历完之后要交换more位置与基准位置，确保有序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">public <span class="keyword">static</span> int[] partition(int[] arr,int L,int R)&#123;</span><br><span class="line">	int less = L - <span class="number">1</span>;</span><br><span class="line">	int more = R;</span><br><span class="line">	<span class="keyword">while</span>(L &lt; more)&#123;<span class="comment">//</span></span><br><span class="line">		<span class="keyword">if</span>(arr[L] &lt; arr[R])&#123;</span><br><span class="line">			swap(arr,++less,L++);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[L] &gt; arr[R])&#123;</span><br><span class="line">			swap(arr,--more,L);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			L++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	swap(arr,more,R);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> int[]&#123;less + <span class="number">1</span>, more&#125;;<span class="comment">//返回基准值相等的左右边界</span></span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> swap(int[] arr, int i, int j) &#123;</span><br><span class="line">	int tmp = arr[i];</span><br><span class="line">	arr[i] = arr[j];</span><br><span class="line">	arr[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>时间复杂度：O(nlogn)<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>arr <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> arr<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span>int L<span class="token punctuation">,</span>int R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>L <span class="token operator">&lt;</span> R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> L <span class="token operator">+</span> <span class="token punctuation">(</span>int<span class="token punctuation">)</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>R <span class="token operator">-</span> L <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> R<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在数组中随机选取一个作为基准</span>
+   int<span class="token punctuation">[</span><span class="token punctuation">]</span> p <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> L<span class="token punctuation">,</span> R<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> L<span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> R<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
+less指针为小于基准的区域，初始指向-1,
+more指针为大于基准的区域，初始指向基准位置，
+开始时让数组第一位即L与基准相比，小于则交换L与less前一位，L+1；
+大于则交换L与more的后一位，L继续与基准比较；相等则L+1
+由于基准没参与交换，所以每次遍历完之后要交换more位置与基准位置，确保有序
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> int<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">partition</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span>int L<span class="token punctuation">,</span>int R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+int less <span class="token operator">=</span> L <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+int more <span class="token operator">=</span> R<span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>L <span class="token operator">&lt;</span> more<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>L<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token operator">++</span>less<span class="token punctuation">,</span>L<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>L<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token operator">--</span>more<span class="token punctuation">,</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+       L<span class="token operator">++</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>more<span class="token punctuation">,</span>R<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>less <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> more<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回基准值相等的左右边界</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> int i<span class="token punctuation">,</span> int j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+int tmp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="3堆排序"><a href="#3堆排序" class="headerlink" title="3堆排序"></a>3堆排序</h2>1 将序列构建成大顶堆。<br>2 将根节点与最后一个节点交换，然后断开最后一个节点<br>3 重复第一、二步，直到所有节点断开。</li>
+<li>时间复杂度：O(nlogn)<br><code>`</code>javascript<br>public static void heapSort(int[] arr){<br>if(arr == null || arr.length &lt; 2){<br>   return;<br>}<br>for(int i=0; i&lt;arr.length; i++){<br>   heapInsert(arr,i);<br>}<br>int size = arr.length;<br>swap(arr, 0, –size);<br>while(size &gt; 0 ){<br>   heapify(arr, 0, size);<br>   swap(arr, 0, –size);<br>}<br>}<br>public static void heapInsert(int[] arr,int index){<br>while(arr[index] &gt; arr[(index - 1) / 2]){<br>   swap(arr, index, (index - 1) / 2);<br>   index = (index - 1) / 2;<br>}<br>}<br>public static void heapify(int[] arr,int index,int size){<br>int left = index * 2 + 1;<br>while(left &lt; size){<br>   int largest = left + 1 &lt; size &amp;&amp; arr[left + 1] &gt; arr[left] ? left + 1 : left;<br>   largest = arr[largest] &gt; arr[index] ? largest : index;<br>   if(largest == index){<pre><code>   break;
+</code></pre>   }<br>   swap(arr, largest, index);<br>   index = largest;<br>   left = index * 2 + 1;<br>}<br>}<br>public static void swap(int[] arr, int i, int j) {<br>int tmp = arr[i];<br>arr[i] = arr[j];<br>arr[j] = tmp;<br>}</li>
 </ul>
 </li>
 </ul>
-<h2 id="3堆排序"><a href="#3堆排序" class="headerlink" title="3堆排序"></a>3堆排序</h2><p>1 将序列构建成大顶堆。<br>2 将根节点与最后一个节点交换，然后断开最后一个节点<br>3 重复第一、二步，直到所有节点断开。</p>
-<ul>
-<li>时间复杂度：O(nlogn)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> heapSort(int[] arr)&#123;</span><br><span class="line">	<span class="keyword">if</span>(arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">		heapInsert(arr,i);</span><br><span class="line">	&#125;</span><br><span class="line">	int size = arr.length;</span><br><span class="line">	swap(arr, <span class="number">0</span>, --size);</span><br><span class="line">	<span class="keyword">while</span>(size &gt; <span class="number">0</span> )&#123;</span><br><span class="line">		heapify(arr, <span class="number">0</span>, size);</span><br><span class="line">		swap(arr, <span class="number">0</span>, --size);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> heapInsert(int[] arr,int index)&#123;</span><br><span class="line">	<span class="keyword">while</span>(arr[index] &gt; arr[(index - <span class="number">1</span>) / <span class="number">2</span>])&#123;</span><br><span class="line">		swap(arr, index, (index - <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">		index = (index - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> heapify(int[] arr,int index,int size)&#123;</span><br><span class="line">	int left = index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(left &lt; size)&#123;</span><br><span class="line">		int largest = left + <span class="number">1</span> &lt; size &amp;&amp; arr[left + <span class="number">1</span>] &gt; arr[left] ? left + <span class="number">1</span> : left;</span><br><span class="line">		largest = arr[largest] &gt; arr[index] ? largest : index;</span><br><span class="line">		<span class="keyword">if</span>(largest == index)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		swap(arr, largest, index);</span><br><span class="line">		index = largest;</span><br><span class="line">		left = index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> swap(int[] arr, int i, int j) &#123;</span><br><span class="line">	int tmp = arr[i];</span><br><span class="line">	arr[i] = arr[j];</span><br><span class="line">	arr[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p><code>`</code></p>
 <table>
 <thead>
 <tr>
@@ -693,7 +770,10 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1先序、中序、后序遍历（递归实现）先序遍历：中 左 右中序遍历：左 中 右后序遍历：左 右 中123456789public static class Node &#123;		public int value;		public Node </div>
+                    <div class="summary">1先序、中序、后序遍历（递归实现）先序遍历：中 左 右中序遍历：左 中 右后序遍历：左 右 中
+public static class Node {
+        public int value;
+        public Node</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
@@ -734,7 +814,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1 冒泡排序顾名思义：小的数一点一点向前冒，最终有序时间复杂度：O(n^2)1234567891011121314151617public static void bubbleSort(int[] arr)&#123;	if(arr == </div>
+                    <div class="summary">1 冒泡排序顾名思义：小的数一点一点向前冒，最终有序时间复杂度：O(n^2)
+public static void bubbleSort(int[] arr){
+    if(arr == null || arr.length &lt;2)</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
@@ -871,7 +953,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">2.2k</span>
+                <span class="white-color">2.5k</span>
             
 
             

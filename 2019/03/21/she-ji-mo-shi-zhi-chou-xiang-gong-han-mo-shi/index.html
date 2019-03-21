@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Felix">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="设计模式之----抽象工厂模式, Felix">
+    <meta name="description" content="抽象工厂模式有一个OEM制造商代理做HP笔记本电脑(Laptop)，后来该制造商得到了更多的品牌笔记本电脑的订单Acer，Lenovo，Dell，该OEM商发现，如果一次同时做很多个牌子的本本，有些不利于管理。利用工厂模式改善设计，用Jav">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Felix</title>
+    <title>设计模式之----抽象工厂模式 | Felix</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        设计模式之----抽象工厂模式
                     </div>
                 </div>
             </div>
@@ -372,9 +372,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -392,14 +396,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        488
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -415,19 +419,136 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p>有一个OEM制造商代理做HP笔记本电脑(Laptop)，后来该制造商得到了更多的品牌笔记本电脑的订单Acer，Lenovo，Dell，该OEM商发现，如果一次同时做很多个牌子的本本，有些不利于管理。利用工厂模式改善设计，用Java控制台应用程序实现该OEM制造商的工厂模式。绘制该模式的UML图。可更改的部分要求用XML配置文件实现。<br>（此图引用自<a href="https://blog.csdn.net/yskyskyer123/article/details/72823103" target="_blank" rel="noopener">qq_35853</a>）<br>注意此UML与下面代码不对应，贴出来是为了更容易理解<br><img src="https://img-blog.csdn.net/20170531193112708" alt="UML图"></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//电脑品牌类型</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Laptop</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//Acer</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Acer</span> <span class="token keyword">implements</span> <span class="token class-name">Laptop</span> <span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Acer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//Dell</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dell</span> <span class="token keyword">implements</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Dell"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//Lenovo</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Lenovo</span> <span class="token keyword">implements</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Lenovo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//电脑品牌类型工厂实体类</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">LaptopFactory</span> <span class="token punctuation">{</span>
+    Laptop <span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AcerFactory</span> <span class="token keyword">implements</span> <span class="token class-name">LaptopFactory</span><span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> Laptop <span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>Acer<span class="token punctuation">)</span>BeanFactory<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"AcerDao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">LenovoFactory</span> <span class="token keyword">implements</span> <span class="token class-name">LaptopFactory</span><span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> Laptop <span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>Lenovo<span class="token punctuation">)</span>BeanFactory<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"LenovoDao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DellFactory</span> <span class="token keyword">implements</span> <span class="token class-name">LaptopFactory</span><span class="token punctuation">{</span>
+
+    @Override
+    <span class="token keyword">public</span> Laptop <span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>Dell<span class="token punctuation">)</span>BeanFactory<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"DellDao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>dom4j<span class="token punctuation">.</span>Document<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>dom4j<span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>dom4j<span class="token punctuation">.</span>io<span class="token punctuation">.</span>SAXReader<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BeanFactory</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Object <span class="token function">getBean</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 创建SAXReader对象来读取配置文件</span>
+            SAXReader reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SAXReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 读取配置文件的内容,获得Document对象</span>
+            Document document <span class="token operator">=</span> reader
+                    <span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>BeanFactory<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"factory.xml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 利用XPath来读取到class元素</span>
+            Element beanElement <span class="token operator">=</span> <span class="token punctuation">(</span>Element<span class="token punctuation">)</span> document<span class="token punctuation">.</span><span class="token function">selectSingleNode</span><span class="token punctuation">(</span><span class="token string">"//bean[@id='"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取到class后的路径</span>
+            String value <span class="token operator">=</span> beanElement<span class="token punctuation">.</span><span class="token function">attributeValue</span><span class="token punctuation">(</span><span class="token string">"class"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 利用反射获得实现类对象</span>
+            Class <span class="token class-name">clazz</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> clazz<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// TODO Auto-generated catch block</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<h2 id="factory-xml"><a href="#factory-xml" class="headerlink" title="factory.xml"></a>factory.xml</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">?</span>xml version<span class="token operator">=</span><span class="token string">"1.0"</span> encoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">?</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>beans<span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"AcerDao"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"laptop.Acer"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"LenovoDao"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"laptop.Lenovo"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"DellDao"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"laptop.Dell"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>beans<span class="token operator">></span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<h2 id="test类"><a href="#test类" class="headerlink" title="test类"></a>test类</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">package</span> laptop<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// Laptop acer,lenovo,dell;</span>
+        LaptopFactory af <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AcerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        LaptopFactory lf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LenovoFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        LaptopFactory df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DellFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        af<span class="token punctuation">.</span><span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lf<span class="token punctuation">.</span><span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        df<span class="token punctuation">.</span><span class="token function">getLaptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">laptopType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://img-blog.csdnimg.cn/20181101121658558." alt></p>
 
             </div>
             <hr>
@@ -575,7 +696,7 @@
                     </span>
                     <a href="https://Felixgitcode.github.io" class="b-link-green">Felix</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/21/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/21/she-ji-mo-shi-zhi-chou-xiang-gong-han-mo-shi/" class="b-link-green">设计模式之----抽象工厂模式</a>
                 </p>
             </div>
         </div>
@@ -598,25 +719,69 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/21/pai-xu-suan-fa-zhi-mou-pao-pai-xu-cha-ru-pai-xu-xuan-ze-pai-xu/">
+                <a href="/2019/03/21/she-ji-mo-shi-zhi-chou-xiang-gong-han-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="排序算法之----冒泡排序，插入排序，选择排序">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="设计模式之----抽象工厂模式">
                         
-                        <span class="card-title">排序算法之----冒泡排序，插入排序，选择排序</span>
+                        <span class="card-title">设计模式之----抽象工厂模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1 冒泡排序顾名思义：小的数一点一点向前冒，最终有序时间复杂度：O(n^2)
-public static void bubbleSort(int[] arr){
-    if(arr == null || arr.length &lt;2)</div>
+                    <div class="summary">抽象工厂模式有一个OEM制造商代理做HP笔记本电脑(Laptop)，后来该制造商得到了更多的品牌笔记本电脑的订单Acer，Lenovo，Dell，该OEM商发现，如果一次同时做很多个牌子的本本，有些不利于管理。利用工厂模式改善设计，用Jav</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Felix
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/21/shu-de-bian-li-zhi-xian-xu-zhong-xu-hou-xu-he-ceng-xu-bian-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="树的遍历之----先序，中序，后序和层序遍历">
+                        
+                        <span class="card-title">树的遍历之----先序，中序，后序和层序遍历</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1先序、中序、后序遍历（递归实现）先序遍历：中 左 右中序遍历：左 中 右后序遍历：左 右 中
+public static class Node {
+        public int value;
+        public Node</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -633,40 +798,6 @@ public static void bubbleSort(int[] arr){
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/21/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            Felix
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
