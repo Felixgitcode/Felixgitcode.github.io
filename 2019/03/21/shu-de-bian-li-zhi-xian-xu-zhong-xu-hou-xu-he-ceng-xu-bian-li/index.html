@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Felix">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="树的遍历之----先序，中序，后序和层序遍历, Felix">
+    <meta name="description" content="1先序、中序、后序遍历（递归实现）先序遍历：中 左 右中序遍历：左 中 右后序遍历：左 右 中123456789public static class Node &amp;#123;		public int value;		public Node ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Felix</title>
+    <title>树的遍历之----先序，中序，后序和层序遍历 | Felix</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        树的遍历之----先序，中序，后序和层序遍历
                     </div>
                 </div>
             </div>
@@ -372,9 +372,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -392,14 +396,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        533
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -415,16 +419,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+                <h2 id="1先序、中序、后序遍历（递归实现）"><a href="#1先序、中序、后序遍历（递归实现）" class="headerlink" title="1先序、中序、后序遍历（递归实现）"></a>1先序、中序、后序遍历（递归实现）</h2><p>先序遍历：中 左 右<br>中序遍历：左 中 右<br>后序遍历：左 右 中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">		public int value;</span><br><span class="line">		public Node left;</span><br><span class="line">		public Node right;</span><br><span class="line"></span><br><span class="line">		public Node(int data) &#123;</span><br><span class="line">			<span class="keyword">this</span>.value = data;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归--先序</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> preOrderRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">		preOrderRecur(head.left);</span><br><span class="line">		preOrderRecur(head.right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//递归--中序</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> inOrderRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		inOrderRecur(head.left);</span><br><span class="line">		System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">		inOrderRecur(head.right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//递归--后序</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> posOrderRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">		posOrderRecur(head.left);</span><br><span class="line">		posOrderRecur(head.right);</span><br><span class="line">		System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2先序，中序，后序遍历（非递归）"><a href="#2先序，中序，后序遍历（非递归）" class="headerlink" title="2先序，中序，后序遍历（非递归）"></a>2先序，中序，后序遍历（非递归）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非递归--先序 ：先压右子节点，再压左子节点</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> preOrderUnRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">			Stack&lt;Node&gt; stack = <span class="keyword">new</span> Stack&lt;Node&gt;();</span><br><span class="line">			stack.push(head);</span><br><span class="line">			<span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">				head = stack.pop();<span class="comment">//将根结点压入栈</span></span><br><span class="line">				System.out.print(head.value + <span class="string">" "</span>);<span class="comment">//打印当前节点的值</span></span><br><span class="line">				<span class="keyword">if</span>(head.right != <span class="literal">null</span>)&#123;</span><br><span class="line">					stack.push(head.right);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(head.left != <span class="literal">null</span>)&#123;</span><br><span class="line">					stack.push(head.left);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//非递归--中序</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> inOrderUnRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">			Stack&lt;Node&gt; stack = <span class="keyword">new</span> Stack&lt;Node&gt;();</span><br><span class="line">			<span class="keyword">while</span>(!stack.isEmpty() || head != <span class="literal">null</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">					stack.push(head);</span><br><span class="line">					head = head.left;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					head = stack.pop();</span><br><span class="line">					System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">					head = head.right; </span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//非递归--后序：顺序为左右中</span></span><br><span class="line">	<span class="comment">//思路：可先求“中右左”再逆序即可得到“左右中”，参考先序遍历的“中左右”要求“中右左”，只需变换压栈顺序即可</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> posOrderUnRecur(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">			Stack&lt;Node&gt; s1 = <span class="keyword">new</span> Stack&lt;Node&gt;();</span><br><span class="line">			Stack&lt;Node&gt; s2 = <span class="keyword">new</span> Stack&lt;Node&gt;();</span><br><span class="line">			s1.push(head);</span><br><span class="line">			<span class="keyword">while</span>(!s1.isEmpty())&#123;</span><br><span class="line">				head = s1.pop();</span><br><span class="line">				s2.push(head);</span><br><span class="line">				<span class="keyword">if</span>(head.left != <span class="literal">null</span>)&#123;</span><br><span class="line">					s1.push(head.left);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(head.right != <span class="literal">null</span>)&#123;</span><br><span class="line">					s1.push(head.right);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span>(!s2.isEmpty())&#123;</span><br><span class="line">				System.out.print(s2.pop().value + <span class="string">" "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-层序遍历"><a href="#3-层序遍历" class="headerlink" title="3 层序遍历"></a>3 层序遍历</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//层序遍历（用队列实现，故而没有递归方式）</span></span><br><span class="line">	public <span class="keyword">static</span> <span class="keyword">void</span> levelOrder(Node head)&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		Queue&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">		queue.offer(head);</span><br><span class="line">		<span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">			head = queue.poll();</span><br><span class="line">			System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">if</span>(head.left != <span class="literal">null</span>)&#123;</span><br><span class="line">				queue.offer(head.left);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(head.right != <span class="literal">null</span>)&#123;</span><br><span class="line">				queue.offer(head.right);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
             </div>
             <hr>
 
@@ -571,7 +569,7 @@
                     </span>
                     <a href="https://Felixgitcode.github.io" class="b-link-green">Felix</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/21/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/21/shu-de-bian-li-zhi-xian-xu-zhong-xu-hou-xu-he-ceng-xu-bian-li/" class="b-link-green">树的遍历之----先序，中序，后序和层序遍历</a>
                 </p>
             </div>
         </div>
@@ -594,23 +592,66 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/21/pai-xu-suan-fa-zhi-mou-pao-pai-xu-cha-ru-pai-xu-xuan-ze-pai-xu/">
+                <a href="/2019/03/21/shu-de-bian-li-zhi-xian-xu-zhong-xu-hou-xu-he-ceng-xu-bian-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="排序算法之----冒泡排序，插入排序，选择排序">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="树的遍历之----先序，中序，后序和层序遍历">
                         
-                        <span class="card-title">排序算法之----冒泡排序，插入排序，选择排序</span>
+                        <span class="card-title">树的遍历之----先序，中序，后序和层序遍历</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1 冒泡排序顾名思义：小的数一点一点向前冒，最终有序时间复杂度：O(n^2)1234567891011121314151617public static void bubbleSort(int[] arr)&#123;	if(arr == </div>
+                    <div class="summary">1先序、中序、后序遍历（递归实现）先序遍历：中 左 右中序遍历：左 中 右后序遍历：左 右 中123456789public static class Node &#123;		public int value;		public Node </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Felix
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/" target="_blank">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/21/pai-xu-suan-fa-zhi-gui-bing-pai-xu-kuai-su-pai-xu-dui-pai-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="排序算法之----归并排序，快速排序，堆排序">
+                        
+                        <span class="card-title">排序算法之----归并排序，快速排序，堆排序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1 归并排序分而治之(divide - conquer);每个递归过程涉及三个步骤    第一, 分解: 把待排序的 n 个元素的序列分解成两个子序列, 每个子序列包括 n/2 个元素.    第二, 治理: 对每个子序列分别调用归并排序M</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -627,40 +668,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/21/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            Felix
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
